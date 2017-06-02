@@ -1,5 +1,5 @@
 FROM ruby:2.2.4
-MAINTAINER Limbic Media Corp.
+MAINTAINER Eric McNiece <emcniece@gmail.com>
 
 RUN apt-get update -qq && apt-get install -y build-essential \
     # for postgres
