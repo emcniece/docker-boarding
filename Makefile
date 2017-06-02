@@ -1,4 +1,4 @@
-# Creates a base image for limbicmedia/aurora-boarding
+# Creates a base image for emcniece/docker-boarding
 
 NAMESPACE := emcniece
 PROJECT := docker-boarding
@@ -32,7 +32,7 @@ run:
 		-e ITC_USER=${ITC_USER} \
 		-e ITC_PASSWORD=${ITC_PASSWORD} \
 		-e ITC_APP_ID=${ITC_APP_ID} \
-		-e ITC_APP_TESTER_GROUPS="Pilot Testers" \
+		-e ITC_APP_TESTER_GROUPS=${ITC_APP_TESTER_GROUPS} \
 		-p 3000:3000 \
 		--name $(RUN_NAME) \
 		$(DOCKER_IMAGE):$(VERSION)
