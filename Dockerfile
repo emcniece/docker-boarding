@@ -1,7 +1,9 @@
 FROM ruby:2.2.4
 MAINTAINER Eric McNiece <emcniece@gmail.com>
 
-RUN apt-get update -qq && apt-get install -y build-essential \
+ENV CHECKOUT_ID=5f8692ef3ee19df32b7f20b169c7eca7a00a9477
+
+RUN apt-get update -qq && apt-get install -y --no-install-recommends build-essential \
     # for postgres
     libpq-dev \
     # for nokogiri
@@ -13,9 +15,9 @@ RUN apt-get update -qq && apt-get install -y build-essential \
     # cleanup
     && rm -rf /var/lib/apt/lists/*
 
-WORKDIR /
-RUN git clone https://github.com/fastlane/boarding.git \
- && cd boarding \
+RUN mkdir -p boarding && cd boarding \
+ && git clone https://github.com/fastlane/boarding.git . \
+ && git checkout $CHECKOUT_ID \
  && gem install bundler \
  && bundle install
 

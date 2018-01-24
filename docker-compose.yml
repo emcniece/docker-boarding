@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+
+  boarding:
+    image: emcniece/docker-boarding:0.0.2
+    ports:
+      - 3000:3000
+    environment:
+      ITC_USER: myUser@domain.com
+      ITC_PASSWORD: passForMyUser
+      ITC_APP_ID: targetAppId
+      # Optional - exclude if unsure
+      #ITC_APP_TESTER_GROUPS: "My Testers Group"
