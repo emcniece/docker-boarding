@@ -20,11 +20,17 @@ docker run -d \
   emcniece/docker-boarding
 ```
 
+Docker-Compose can also be used - fill out the environment variables in [docker-compose.yml](./docker-compose.yml) and execute:
+
+```sh
+docker-compose up -d
+```
+
 ## Building
 
 If you have Make installed, the Makefile will help with building the container.
 
-Ensure that `.env` is populated before building and running.
+Ensure that `.env` is populated (copy [.env-sample](./.env-sample)) before building and running.
 
 ```sh
 # Load environment variables for Makefile use
